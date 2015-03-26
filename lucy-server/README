@@ -1,0 +1,13 @@
+Welcome to the lucy-server Flask app. This is the web application you can run on your MySQL-equipped server to interface with the Lucy and Mood Reminder logging applications.
+
+Server requirements:
+-Python >=2.7
+-MySQL >=5
+-Flask (via pip install flask)
+-Flask-MySQL (via pip install flask-mysql)
+-MySQL-Python (via pip install mysql-python)
+-Flask-CAS (via pip install flask-cas) (For user authentication against the university CAS server; this is optional)
+
+To get the application running, after fulfilling the above requirements, fully fill out the configuration file config.py. You are then ready to deploy the application to the server of your choice.
+
+This application has been tested successfully with an Amazon EC2 instance, though it should work on any Flask and MySQL-enabled platform (i.e. Google App Engine).

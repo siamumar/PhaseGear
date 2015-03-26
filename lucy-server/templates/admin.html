@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+<div class="row">
+<div class="col-lg-10">
+<div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title">{{table}}</h3>
+        </div>
+        <div class="panel-body">
+			<table class="table table-striped">
+			<tr>
+			{% for name in names %}
+			   <th>{{name[0]}}</th>
+			{% endfor %}
+			</tr>
+			{% for entry in entries %}
+			<tr>
+			  {% for item in entry %}
+			    <td>{{item}}</td>
+			   {% endfor %}
+			  </tr>
+			{% endfor %}
+			</table>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</body>
+</html>

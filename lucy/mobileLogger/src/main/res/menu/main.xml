@@ -1,0 +1,27 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.riceucla.mobilelogger.MainActivity" >
+
+    <item
+        android:id="@+id/action_lastsynctime"
+        android:orderInCategory="1"
+        android:icon="@drawable/ic_action_time"
+        android:title="Last sync time"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/action_sync"
+        android:orderInCategory="2"
+        android:icon="@drawable/ic_action_refresh"
+        android:title="Force sync now"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/action_uuid"
+        android:orderInCategory="3"
+        android:icon="@drawable/ic_drawer"
+        android:title="Show UUID"
+        app:showAsAction="never"/>
+
+</menu>
