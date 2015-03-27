@@ -11,18 +11,18 @@
 # CAS AUTHENTICATION
 # String representation of the fully qualified URL of the CAS server to be used for authentication.
 # To disable the CAS authentication functionality, initialize this variable to None.
-CAS_SERVER_URL = "https://netid.rice.edu"
+CAS_SERVER_URL = "https://suh1.rice.edu"
 
 # List of string representations of Net IDs that are permitted access to the web administration interface.
-ALLOWED_CAS_USERS = ["kl38", "pyw1"]
+ALLOWED_CAS_USERS = ["suh1", "a.flores", "cx7"]
 
 
 # MYSQL DATABASE
 # Name of the database. This must match the name of the database created on the local MySQL server.
-DATABASE_NAME = "EmpData"
+DATABASE_NAME = "PhaseGear_1"
 
 # Username to access the database
 DATABASE_LOGIN_USERNAME = "root"
 
 # Password to access the database
-DATABASE_LOGIN_PASSWORD = "56289086"
+DATABASE_LOGIN_PASSWORD = "phasegear"

@@ -21,7 +21,7 @@ public class Config {
     public static final boolean LOG_LOCATION = true;
     public static final boolean LOG_APP = true;
     public static final boolean LOG_WIFI = true;
-    public static final boolean LOG_CELLULAR = true;
+    public static final boolean LOG_CELLULAR = false;
     public static final boolean LOG_ACCELEROMETER = true;
     public static final boolean LOG_DEVICE = true;
     public static final boolean LOG_NETWORK = true;
