@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Phase Gear</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_device_list">DeviceListActivity</string>
+    <string name="BT_devices">BT devices</string>
+    <string name="welcome">Ready?</string>
+    <string name="yes">Yes</string>
+</resources>

@@ -9,10 +9,10 @@ package edu.rice.moodreminder;
  */
 public class Config {
     // Fully qualified URL of the Flask upload script on the server.
-    public static final String UPLOAD_BASE_URL = "http://ec2-54-85-147-87.compute-1.amazonaws.com/upload";
+    public static final String UPLOAD_BASE_URL = "ec2-54-148-138-204.us-west-2.compute.amazonaws.com/upload";//"http://ec2-54-85-147-87.compute-1.amazonaws.com/upload";
 
     // Hour and minute representing the time at which the notification should be generated. Important: 24-hour format (i.e., 8 PM is hour 20 and minute 0)
-    public static final int NOTIFICATION_HOUR = 13;
+    public static final int NOTIFICATION_HOUR = 17;
     public static final int NOTIFICATION_MINUTE = 50;
 
     // Title and message of the notification.
