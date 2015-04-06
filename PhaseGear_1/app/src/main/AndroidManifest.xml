@@ -22,7 +22,7 @@
         </activity>
         <activity
             android:name=".DeviceListActivity"
-            android:label="@string/title_activity_device_list"
+            android:label="@string/BT_devices"
             android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

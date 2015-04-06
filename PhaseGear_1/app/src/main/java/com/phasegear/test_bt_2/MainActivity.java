@@ -20,7 +20,7 @@ package com.phasegear.test_bt_2;
 public class MainActivity extends Activity {
 
     Button btnOn, btnOff;
-    TextView /*txtString, txtStringLength,*/ data;
+    TextView /*txtString, txtStringLength,*/ reps, w_reps;
     Handler bluetoothIn;
 
     final int handlerState = 0;                        //used to identify handler message
@@ -45,13 +45,16 @@ public class MainActivity extends Activity {
         //Link the buttons and textViews to respective views
         btnOn = (Button) findViewById(R.id.buttonOn);
         btnOff = (Button) findViewById(R.id.buttonOff);
-        data = (TextView) findViewById(R.id.data);
+        reps = (TextView) findViewById(R.id.reps);
+        w_reps = (TextView) findViewById(R.id.w_reps);
 
         bluetoothIn = new Handler() {
             public void handleMessage(android.os.Message msg) {
                 if (msg.what == handlerState) {                                     //if message is what we want
                     String readMessage = (String) msg.obj;
-                    data.setText(readMessage);
+                    String[] tokens = readMessage.split("-");
+                    reps.setText(tokens[0]);
+                    w_reps.setText(tokens[1]);
                 }
             }
         };
