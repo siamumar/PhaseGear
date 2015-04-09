@@ -1,26 +1,26 @@
 package com.phasegear.test_bt_2;
 
-        import java.io.IOException;
-        import java.io.InputStream;
-        import java.io.OutputStream;
-        import java.util.UUID;
-        import android.app.Activity;
-        import android.bluetooth.BluetoothAdapter;
-        import android.bluetooth.BluetoothDevice;
-        import android.bluetooth.BluetoothSocket;
-        import android.content.Intent;
-        import android.os.Bundle;
-        import android.os.Handler;
-        import android.view.View;
-        import android.view.View.OnClickListener;
-        import android.widget.Button;
-        import android.widget.TextView;
-        import android.widget.Toast;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.UUID;
+import android.app.Activity;
+import android.bluetooth.BluetoothAdapter;
+import android.bluetooth.BluetoothDevice;
+import android.bluetooth.BluetoothSocket;
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Handler;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends Activity {
 
-    Button btnOn, btnOff;
-    TextView /*txtString, txtStringLength,*/ reps, w_reps;
+    Button btnOn, buttonTrain, buttonReset;
+    TextView reps, w_reps, info;
     Handler bluetoothIn;
 
     final int handlerState = 0;                        //used to identify handler message
@@ -44,17 +44,24 @@ public class MainActivity extends Activity {
 
         //Link the buttons and textViews to respective views
         btnOn = (Button) findViewById(R.id.buttonOn);
-        btnOff = (Button) findViewById(R.id.buttonOff);
+        buttonTrain = (Button) findViewById(R.id.buttonTrain);
+        buttonReset = (Button) findViewById(R.id.buttonReset);
         reps = (TextView) findViewById(R.id.reps);
         w_reps = (TextView) findViewById(R.id.w_reps);
+        info = (TextView) findViewById(R.id.info);
 
         bluetoothIn = new Handler() {
             public void handleMessage(android.os.Message msg) {
                 if (msg.what == handlerState) {                                     //if message is what we want
                     String readMessage = (String) msg.obj;
                     String[] tokens = readMessage.split("-");
-                    reps.setText(tokens[0]);
-                    w_reps.setText(tokens[1]);
+                    if (tokens[0].matches("t")) {
+                        info.setText(/*"Max speed set to "+*/tokens[1]);
+                    }
+                    else {
+                        if(tokens.length >= 1) reps.setText(tokens[0]);
+                        if(tokens.length >= 2) w_reps.setText(tokens[1]);
+                    }
                 }
             }
         };
@@ -62,14 +69,6 @@ public class MainActivity extends Activity {
         btAdapter = BluetoothAdapter.getDefaultAdapter();       // get Bluetooth adapter
         checkBTState();
 
-        // Set up onClick listeners for buttons to send 1 or 0 to turn on/off LED
-        btnOff.setOnClickListener(new OnClickListener() {
-            public void onClick(View v) {
-                if(address == null) return;
-                mConnectedThread.write("0");    // Send "0" via Bluetooth
-                //Toast.makeText(getBaseContext(), "Turn off LED", Toast.LENGTH_SHORT).show();
-            }
-        });
 
         btnOn.setOnClickListener(new OnClickListener() {
             public void onClick(View v) {
@@ -77,8 +76,33 @@ public class MainActivity extends Activity {
                     Toast.makeText(getBaseContext(), "Please connect to Phase Gear", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                mConnectedThread.write("1");    // Send "1" via Bluetooth
-                //Toast.makeText(getBaseContext(), "Turn on LED", Toast.LENGTH_SHORT).show();
+                mConnectedThread.write("1");
+                reps.setText("0");
+                w_reps.setText("0");
+            }
+        });
+
+        buttonTrain.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+                if(address == null) {
+                    Toast.makeText(getBaseContext(), "Please connect to Phase Gear", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                mConnectedThread.write("2");
+                reps.setText("0");
+                w_reps.setText("0");
+                info.setText("Please perform 10 training reps");
+            }
+        });
+
+        buttonReset.setOnClickListener(new OnClickListener() {
+            public void onClick(View v) {
+                if(address == null) {
+                    Toast.makeText(getBaseContext(), "Please connect to Phase Gear", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                mConnectedThread.write("3");
+                Toast.makeText(getBaseContext(), "Speed reset", Toast.LENGTH_SHORT).show();
             }
         });
     }
