@@ -1,0 +1,129 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingTop="16dp"
+    android:background="#fff">
+
+    <!--TextView
+        android:id="@+id/testView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="15sp" /-->
+
+    <!--TextView
+        android:id="@+id/txtString"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignLeft="@+id/testView1"
+        android:layout_alignParentBottom="true"
+        android:text=""
+        android:textSize="15sp" /-->
+
+    <Button
+        android:id="@+id/buttonOn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/start"
+        android:textSize="@dimen/abc_text_size_body_2_material"
+        android:layout_marginBottom="151dp"
+        android:paddingLeft="@dimen/abc_dropdownitem_text_padding_left"
+        android:paddingRight="@dimen/abc_dropdownitem_text_padding_right"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <!--Button
+        android:id="@+id/buttonOff"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:background="#5e2eb1ff"
+        android:visibility="invisible" /-->
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/BT_devices"
+        android:id="@+id/bt_devices"
+        android:onClick="showBTdevices"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/reps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="__"
+        android:textSize="@dimen/abc_text_size_display_3_material"
+        android:textStyle="bold"
+        android:textColor="#ff0a783c"
+        android:textAlignment="center"
+        android:layout_above="@+id/buttonOn"
+        android:layout_marginBottom="50dp"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="90dp" />
+
+
+    <TextView
+        android:id="@+id/w_reps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="__"
+        android:textSize="@dimen/abc_text_size_display_1_material"
+        android:textStyle="bold"
+        android:textColor="#ffb70806"
+        android:textAlignment="center"
+        android:layout_above="@+id/buttonOn"
+        android:layout_marginBottom="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="90dp" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/logo"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/logo"
+        android:src="@drawable/logo"
+        android:scaleType="fitCenter"
+        android:layout_above="@+id/reps" />
+
+    <Button
+        android:id="@+id/buttonTrain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/train"
+        android:textSize="@dimen/abc_text_size_body_2_material"
+        android:paddingLeft="@dimen/abc_dropdownitem_text_padding_left"
+        android:paddingRight="@dimen/abc_dropdownitem_text_padding_right"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="50dp"
+        android:layout_alignParentBottom="true" />
+
+
+    <Button
+        android:id="@+id/buttonReset"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/reset1"
+        android:textSize="@dimen/abc_text_size_body_2_material"
+        android:paddingLeft="@dimen/abc_dropdownitem_text_padding_left"
+        android:paddingRight="@dimen/abc_dropdownitem_text_padding_right"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="50dp"
+        android:layout_alignParentBottom="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text=""
+        android:id="@+id/info"
+        android:layout_above="@+id/buttonTrain"
+        android:textAlignment="center" />
+
+</RelativeLayout>

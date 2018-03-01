@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Phase Gear</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_device_list">DeviceListActivity</string>
+    <string name="BT_devices">Connect to Phase Gear</string>
+    <string name="BT_devices_title">Please click on Phase Gear from the paired devices</string>
+    <string name="info">If not listed please pair Phase Gear in Android settings</string>
+    <string name="welcome">Ready?</string>
+    <string name="yes">Yes</string>
+    <string name="start">Start Exercise</string>
+    <string name="logo">Phase Gear</string>
+    <string name="reset1">Default</string>
+    <string name="train">Train Me</string>
+</resources>
